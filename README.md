@@ -8,7 +8,7 @@ IDE : Android Studio
 Language : Kotlin
 API : OpenWeatherMap API
 
-### 팀원
+### 팀원👫
 - 문휘식(컴퓨터공학부): API를 사용한 실시간 날씨 정보 & 도시(위치) 정보, 이미지 크롤링 제외 전반적인 기능 설계
 - 임하늘(컴퓨터공학부): 전체적인 어플의 UI 디자인
 - 이승복(컴퓨터공학부): 옷 추천에 필요한 옷 이미지들 크롤링
@@ -32,25 +32,25 @@ API : OpenWeatherMap API
 >   - 동일한 옷이라도 계절마다 모두 특성이 다른데 이를 고려하지 않고 옷을 추천해준다. (봄 블라우스, 겨울 블라우스, 짧은 원피스, 긴 원피스 등)
 
 ### 기능 설명
-#### 한눈에 보는 기상정보
+#### 📣한눈에 보는 기상정보
 > 현재 위치의 현재 시간의 날씨 정보를 불러온다.
 > 
 > 어플리케이션을 실행할 때 마다 혹은 새로 고침 할 때 마다 기상 정보를 갱신한다.
 > 
 > 각 날씨 상황에 따라 날씨에 맞는 이미지를 보여줌으로서 보다 빠르고 직관적인 날씨 파악이 가능하도록 한다.
-#### 체감온도 측정
+#### 📣체감온도 측정
 > API로 받아온 날씨 정보와 입력 받은 사용자 정보를 토대로 사용자가 실제로 체감하는 기온을 계산한다.
 > 
 > 여러 조건을 고려하여 계절별로 체감온도를 계산한다.
-#### 코디 추천
+#### 📣코디 추천
 > 기상 정보 안에 포함되는 여러 요인들과 사용자 정보를 참고하여 사용자에게 날씨에 맞는 구체적인 코디를 추천해준다.
 >
 > 사용자가 해당 코디를 원하지 않을 경우 버튼을 눌러서 조건에 맞는 다른 코디를 추천해준다.
-#### 위치 선택
+#### 📣위치 선택
 > GPS 권한을 이용해서 사용자(가상 에뮬레이터)의 위치 정보를 변경할 수 있게 한다.
-#### 위치 초기화
+#### 📣위치 초기화
 > 도시 선택 기능으로 도시를 변경했을 때 현재 위치(GPS 이용)로 도시를 바꿀 수 있게 해준다.
-#### 도시 선택
+#### 📣도시 선택
 > 사용자는 본인이 현재 거주하고 있는 도시를 선택하거나 도시 목록에서 원하는 도시를 선택해서 해당 도시의 날씨 정보를 받아올 수 있다.
 #### ~~나만의 옷장~~
 > ~~사용자는 실제로 가지고 있는 옷을 추가하고 이 데이터를 기반으로 추천을 받습니다. 만약에 새로운 옷을 구입했다면  나만의 디지털 옷장을 업데이트할 수 있습니다.~~
@@ -67,28 +67,28 @@ API : OpenWeatherMap API
 
 ### Screenshots
 ---
-### 새로고침 할 때 마다 업데이트 되는 실시간 기상 정보
+### 🏞️새로고침 할 때 마다 업데이트 되는 실시간 기상 정보
 <img width="693" alt="새로고침 실시간 기상 정보" src="https://user-images.githubusercontent.com/101445377/214492439-6d3d1cac-c693-4b5c-b195-b2727e60bf45.png">
 
-### 사용자가 선택한 위치로 기상 정보 업데이트
+### 🏞️사용자가 선택한 위치로 기상 정보 업데이트
 <img width="839" alt="선택한 위치로 기상 정보 업뎃" src="https://user-images.githubusercontent.com/101445377/214492438-8dc39698-8e08-4f69-b00c-b3182ad1ea09.png">
 
-### 직접 입력 받는 사용자 맞춤 정보
+### 🏞️직접 입력 받는 사용자 맞춤 정보
 <img width="634" alt="사용자 맞춤 정보" src="https://user-images.githubusercontent.com/101445377/214492433-335cdc56-ae79-4da0-9d95-e3a987acf86b.png">
 
-### 터치 한번으로 간단하게 옷장 페이지로 이동
+### 🏞️터치 한번으로 간단하게 옷장 페이지로 이동
 <img width="682" alt="옷장 페이지 이동" src="https://user-images.githubusercontent.com/101445377/214492430-f2a72021-6651-4708-8f4f-26774cf60b21.png">
 
-### 옷장 페이지에서 확인할 수 있는 날씨 요약정보 & 입력 받은 사용자 정보와 기상 정보를 토대로 옷 추천
+### 🏞️옷장 페이지에서 확인할 수 있는 날씨 요약정보 & 입력 받은 사용자 정보와 기상 정보를 토대로 옷 추천
 <img width="693" alt="날씨 요약" src="https://user-images.githubusercontent.com/101445377/214492423-174f514f-4903-474a-93d0-95a42805f7fa.png">
 
-### 추천 받은 옷이 마음에 들지 않을 때 다른 옷 추천받기
+### 🏞️추천 받은 옷이 마음에 들지 않을 때 다른 옷 추천받기
 <img width="682" alt="다른 옷 추천" src="https://user-images.githubusercontent.com/101445377/214492407-b5596c92-427c-4e3c-9668-c28e1ca10d56.png">
 ## Code Description
 
 ### MainActivity.kt
 
-#### API 호출에 필요한 변수, GPS에 필요한 변수 등 선언부
+#### ⚙️API 호출에 필요한 변수, GPS에 필요한 변수 등 선언부
     /* 추후에 GPS에서 불러온 위도, 경도 좌표로 초기화할 변수임 */
     var lat : String = (37.554752).toString() // 위도
     var lon: String = (126.970631).toString() // 경도
@@ -134,7 +134,7 @@ API : OpenWeatherMap API
 > OpenWeatherMap API에서 받아오는 json 데이터를 저장하기 위한 변수 선언부이다.
 
 ---
-#### clearLayout()
+#### ⚙️clearLayout()
     // 새로고침 버튼 누르면 텍스트가 누적이 됨.
     // 누적되는 텍스트 없애주는 함수
     fun clearLayout() {
@@ -151,7 +151,7 @@ API : OpenWeatherMap API
 > 이를 방지해주기 위해 Layout을 초기화 해주는 함수를 만들었다.
 
 ---
-#### chooseClothes()
+#### ⚙️chooseClothes()
     fun chooseClothes(temp: Double, humidity: Int, wind: Double) {
 
         var humidity_r = when {
@@ -206,7 +206,7 @@ API : OpenWeatherMap API
     }
 > 여러 기상 정보에 특정 값을 부여하여 옷을 추천해주는 알고리즘이다.
 ---
-#### setCurrentWeather(...)
+#### ⚙️setCurrentWeather(...)
     // 현재 날씨 설정하는 함수
     private fun setCurrentWeather(lat : String, lon : String) {
         getCurrentTime() // 현재 날짜, 현재 시간 설정함.
@@ -291,7 +291,7 @@ API : OpenWeatherMap API
 > API를 비동기 호출하여 위에서 선언한 변수에 json 데이터를 알맞게 저장한다.
 ---
 
-#### setMinAndMaxTemp(...)
+#### ⚙️setMinAndMaxTemp(...)
 
     // 최저, 최고 온도 api 호출함수
     private fun setMinAndMaxTemp(lat : String, lon : String) {
@@ -334,7 +334,7 @@ API : OpenWeatherMap API
 > 현재 최저, 최고 온도를 가져오기 위해 API를 호출한다.
 > 실시간 날씨 정보를 불러오는 API와 동일한 OpenWeatherMap API이지만, 버전은 서로 다르다. 
 > API를 2번 호출하는게 번거롭지만, 실시간 날씨 정보를 불러오는 버전은 최저, 최고온도 데이터가 없어서 부득이하게 다른 버전의 API도 추가로 호출했다.
-#### setWeatherImg()
+#### ⚙️setWeatherImg()
 
     private fun setWeatherImg(desc : String) : Int {
         return when(desc) {
@@ -358,7 +358,7 @@ API : OpenWeatherMap API
 > 하지만, 불러와서 사용했을 때 해상도가 깨지는 현상이 발생해서,
 >  다른 무료 이미지들을 불러와서 맵핑하는 코드이다.
 ---
-#### translateWeatherLangToKorean(...)
+#### ⚙️translateWeatherLangToKorean(...)
 
     // [번역함수] 영어 -> 한글
     private fun translateWeatherLangToKorean(main : String) : String {
@@ -382,7 +382,7 @@ API : OpenWeatherMap API
 > OpenWeatherMap API를 호출하면 json 데이터는 영어로 구성되어있다.
 > 이를 한글로 번역해주는 함수이다.
 ---
-#### getCurrentTime()
+#### ⚙️getCurrentTime()
 
      // Calendar를 호출해서 현재 날짜, 시간을 불러온다.
     private fun getCurrentTime() {
@@ -399,7 +399,7 @@ API : OpenWeatherMap API
 > 
 > 현재 시각을 정확하게 표현하지 않으므로 Calendar를 사용해서 현재 시간을 표시해주도록 했다.
 ---
-#### calcUnixDateToRealDate()
+#### ⚙️calcUnixDateToRealDate()
 
     // [변환 함수] 유닉스 시간 -> 실제 시간
     private fun calcUnixDateToRealDate(dt : Int) {
@@ -411,7 +411,7 @@ API : OpenWeatherMap API
 > OpenWeatherMap API 을 호출하면 json 데이터에 유닉스 시간이 포함된다.
 > 이를 실제 시간으로 변환해주는 함수이다.
 ---
-#### isOptimalHumidity()
+#### ⚙️isOptimalHumidity()
 
     // 습도(정수형)에 따라서 건조, 쾌적, 습함을 구별해서 그 값을 리턴
     private fun isOptimalHumidity(temp: Double, humidity: Int) : String {
@@ -455,7 +455,7 @@ API : OpenWeatherMap API
 > 습도에 따라 사람이 어떻게 느끼는지에 대한 기사를 접했다.
 > 그 내용을 토대로 알고리즘을 작성했다. (과학적 근거는 없다)
 ---
-#### GPS 관한 설정 
+#### ⚙️GPS 관한 설정 
 
     val activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if(checkGPSProvider()) {
@@ -660,7 +660,7 @@ API : OpenWeatherMap API
 > 간략하게 흐름을 설명하자면, 최초 어플 실행 시 GPS 접근 권한을 요청하고 허용되면 어플이 실행되고 허용하지 않으면 실행되지 않는다.
 ---
 ### CityAcitivity.kt
-#### 도시 목록 선언
+#### ⚙️도시 목록 선언
 
     val countries = arrayOf<String>(
         "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia",
@@ -692,7 +692,7 @@ API : OpenWeatherMap API
 > 최종 발표, 대본 준비때문에 프로젝트 마감 일정을 맞추기가 빠듯해서 일일히 작성했다.
 > 일일히 작성하기 전에 여러 방법을 구글링 해보았지만 위에 서술한대로 시간이 부족해서  어쩔 수 없이 일일히 작성했다.. 다시 생각해도 매우 아쉬운 부분이다.
 ---
-#### getLatAndLng()
+#### ⚙️getLatAndLng()
 
     private fun getLatAndLng(country : String) : String{
             var geocoder = Geocoder(this@CityActivity)
@@ -710,7 +710,7 @@ API : OpenWeatherMap API
 > 
 > 실시간 날씨 정보에서 정확한 위치 정보를 표시해줘야 하므로 Geocoder를 사용해서 위도와 경도를 얻는다.
 ---
-### WeatherInterface.kt
+### ⚙️WeatherInterface.kt
 
     interface WeatherInterface {
     // API 호출에 필요한 정보를 쿼리로 설정
@@ -748,7 +748,7 @@ API : OpenWeatherMap API
     }
 > API 호출에 필요한 정보를 컴포넌트(모듈)화 시켜서 작성한 코드이다.
 ---
-### ModelWeather.kt
+### ⚙️ModelWeather.kt
 
     class ModelWeather {
 	    var timezone : String ?= null
@@ -761,7 +761,7 @@ API : OpenWeatherMap API
     }
 > WeatherInterface.kt 와 마찬가지로 컴포넌트(모듈)화 시켜서 작성한 코드이다.
 ---
-### 느낀 점 & 아쉬운 점..
+### 😿느낀 점 & 아쉬운 점..
 > 이번에 안드로이드 프로그래밍을 처음 접해보았다.
 > 1학년 때 부터 Java를 사용해서 Kotlin을 배우는데에는 큰 어려움은 없었다.
 > 
