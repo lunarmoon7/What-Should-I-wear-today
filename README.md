@@ -1,7 +1,7 @@
 # 2022-3학년 1학기 모바일 팀 프로그래밍 팀프로젝트
 ## Overall Description
 ### 프로젝트 명: 오늘 뭐 입지?
----
+
 ### Development Env
 ---
 IDE : Android Studio
