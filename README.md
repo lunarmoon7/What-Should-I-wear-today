@@ -3,10 +3,9 @@
 ### 프로젝트 명: 오늘 뭐 입지?
 
 ### Development Env
----
-IDE : Android Studio
-Language : Kotlin
-API : OpenWeatherMap API
+- IDE : Android Studio
+- Language : Kotlin
+- API : OpenWeatherMap API
 
 ### 팀원
 - 문휘식(컴퓨터공학부): API를 사용한 실시간 날씨 정보 & 도시(위치) 정보, 이미지 크롤링 제외 전반적인 기능 설계
