@@ -65,7 +65,7 @@ API : OpenWeatherMap API
 > 
 ➡ 프로젝트 진행 일정과 맞지 않아 삭제 함
 
-## Screenshots
+### Screenshots
 ---
 ### 새로고침 할 때 마다 업데이트 되는 실시간 기상 정보
 <img width="693" alt="새로고침 실시간 기상 정보" src="https://user-images.githubusercontent.com/101445377/214492439-6d3d1cac-c693-4b5c-b195-b2727e60bf45.png">
@@ -84,7 +84,6 @@ API : OpenWeatherMap API
 
 ### 추천 받은 옷이 마음에 들지 않을 때 다른 옷 추천받기
 <img width="682" alt="다른 옷 추천" src="https://user-images.githubusercontent.com/101445377/214492407-b5596c92-427c-4e3c-9668-c28e1ca10d56.png">
-
 ## Code Description
 
 ### MainActivity.kt
@@ -131,6 +130,9 @@ API : OpenWeatherMap API
     var isReset = false // Layout에 위치 초기화 버튼 작동시 필요한 isReset 값
     lateinit var countryLat : String // 도시 선택하기에서 선택한 도시의 위도
     lateinit var countryLon : String // 도시 선택하기에서 선택한 도시의 경도
+
+> OpenWeatherMap API에서 받아오는 json 데이터를 저장하기 위한 변수 선언부이다.
+
 ---
 #### clearLayout()
     // 새로고침 버튼 누르면 텍스트가 누적이 됨.
@@ -144,6 +146,10 @@ API : OpenWeatherMap API
             high.text = "최고온도: "
         }
     }
+
+> 새로고침 버튼을 눌렀을 때 텍스트가 누적이 되는 현상이 있었다.
+> 이를 방지해주기 위해 Layout을 초기화 해주는 함수를 만들었다.
+
 ---
 #### chooseClothes()
     fun chooseClothes(temp: Double, humidity: Int, wind: Double) {
@@ -198,6 +204,7 @@ API : OpenWeatherMap API
         intent.putExtra("imgSource", imgSource2)
         startActivity(intent)
     }
+> 여러 기상 정보에 특정 값을 부여하여 옷을 추천해주는 알고리즘이다.
 ---
 #### setCurrentWeather(...)
     // 현재 날씨 설정하는 함수
@@ -280,7 +287,10 @@ API : OpenWeatherMap API
             }
         })
     }
+> 메인 화면에서 보이는 실시간 날씨 정보 코드이다.
+> API를 비동기 호출하여 위에서 선언한 변수에 json 데이터를 알맞게 저장한다.
 ---
+
 #### setMinAndMaxTemp(...)
 
     // 최저, 최고 온도 api 호출함수
@@ -321,6 +331,9 @@ API : OpenWeatherMap API
         })
     }
 ---
+> 현재 최저, 최고 온도를 가져오기 위해 API를 호출한다.
+> 실시간 날씨 정보를 불러오는 API와 동일한 OpenWeatherMap API이지만, 버전은 서로 다르다. 
+> API를 2번 호출하는게 번거롭지만, 실시간 날씨 정보를 불러오는 버전은 최저, 최고온도 데이터가 없어서 부득이하게 다른 버전의 API도 추가로 호출했다.
 #### setWeatherImg()
 
     private fun setWeatherImg(desc : String) : Int {
@@ -341,6 +354,9 @@ API : OpenWeatherMap API
             else -> R.drawable.nonweather
         }
     }
+> OpenWeatherMap API에도 날씨에 따른 아이콘 이미지를 제공한다.
+> 하지만, 불러와서 사용했을 때 해상도가 깨지는 현상이 발생해서,
+>  다른 무료 이미지들을 불러와서 맵핑하는 코드이다.
 ---
 #### translateWeatherLangToKorean(...)
 
@@ -363,7 +379,9 @@ API : OpenWeatherMap API
             else -> main
         }
     }
-
+> OpenWeatherMap API를 호출하면 json 데이터는 영어로 구성되어있다.
+> 이를 한글로 번역해주는 함수이다.
+---
 #### getCurrentTime()
 
      // Calendar를 호출해서 현재 날짜, 시간을 불러온다.
@@ -376,7 +394,11 @@ API : OpenWeatherMap API
         val sec = "00"
         basetime = hour + min + sec // hour + min + sec = 15:12:00
     }
-
+> OpenWeatherMap API 에서 내가 사용한 버전은 1시간 단위로 날씨를 불러온다.
+> 예를 들어 현재 시간이 13:20 이라면, json 데이터에는 13:00 으로 표시된다.
+> 
+> 현재 시각을 정확하게 표현하지 않으므로 Calendar를 사용해서 현재 시간을 표시해주도록 했다.
+---
 #### calcUnixDateToRealDate()
 
     // [변환 함수] 유닉스 시간 -> 실제 시간
@@ -386,7 +408,9 @@ API : OpenWeatherMap API
         val hour = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(date.time)
         unixToRealTime = hour
     }
-
+> OpenWeatherMap API 을 호출하면 json 데이터에 유닉스 시간이 포함된다.
+> 이를 실제 시간으로 변환해주는 함수이다.
+---
 #### isOptimalHumidity()
 
     // 습도(정수형)에 따라서 건조, 쾌적, 습함을 구별해서 그 값을 리턴
@@ -428,7 +452,9 @@ API : OpenWeatherMap API
         }
         return resultMsg
     }
-
+> 습도에 따라 사람이 어떻게 느끼는지에 대한 기사를 접했다.
+> 그 내용을 토대로 알고리즘을 작성했다. (과학적 근거는 없다)
+---
 #### GPS 관한 설정 
 
     val activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -630,6 +656,8 @@ API : OpenWeatherMap API
             }
         }
     }
+> 수업 내용에서 배운 GPS 코드에 충실히 작성하였다.
+> 간략하게 흐름을 설명하자면, 최초 어플 실행 시 GPS 접근 권한을 요청하고 허용되면 어플이 실행되고 허용하지 않으면 실행되지 않는다.
 ---
 ### CityAcitivity.kt
 #### 도시 목록 선언
@@ -660,6 +688,9 @@ API : OpenWeatherMap API
         "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan",
         "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
     )
+> 도시 선택에 필요한 도시들을 선언한 코드이다. 
+> 최종 발표, 대본 준비때문에 프로젝트 마감 일정을 맞추기가 빠듯해서 일일히 작성했다.
+> 일일히 작성하기 전에 여러 방법을 구글링 해보았지만 위에 서술한대로 시간이 부족해서  어쩔 수 없이 일일히 작성했다.. 다시 생각해도 매우 아쉬운 부분이다.
 ---
 #### getLatAndLng()
 
@@ -674,6 +705,10 @@ API : OpenWeatherMap API
             }
         return ""
     }
+> OpenWeatherMap API를 사용시 json데이터에 위치 정보가 포함되어있다.
+> 그러나 위치 정보가 정확하지 않고 큰 범위에서의 위치를 제공해준다.
+> 
+> 실시간 날씨 정보에서 정확한 위치 정보를 표시해줘야 하므로 Geocoder를 사용해서 위도와 경도를 얻는다.
 ---
 ### WeatherInterface.kt
 
@@ -711,6 +746,7 @@ API : OpenWeatherMap API
 	        retrofit.create(WeatherInterface::class.java)
 	    }
     }
+> API 호출에 필요한 정보를 컴포넌트(모듈)화 시켜서 작성한 코드이다.
 ---
 ### ModelWeather.kt
 
@@ -723,4 +759,5 @@ API : OpenWeatherMap API
 	    var wind_speed : Double ?= null
 	    var main : String ?= null
     }
+> WeatherInterface.kt 와 마찬가지로 컴포넌트(모듈)화 시켜서 작성한 코드이다.
 ---
