@@ -65,24 +65,24 @@ API : OpenWeatherMap API
 > 
 ➡ 프로젝트 진행 일정과 맞지 않아 삭제 함
 
-### Screenshots
+## Screenshots
 ---
-#### 새로고침 할 때 마다 업데이트 되는 실시간 기상 정보
+### 새로고침 할 때 마다 업데이트 되는 실시간 기상 정보
 <img width="693" alt="새로고침 실시간 기상 정보" src="https://user-images.githubusercontent.com/101445377/214492439-6d3d1cac-c693-4b5c-b195-b2727e60bf45.png">
 
-#### 사용자가 선택한 위치로 기상 정보 업데이트
+### 사용자가 선택한 위치로 기상 정보 업데이트
 <img width="839" alt="선택한 위치로 기상 정보 업뎃" src="https://user-images.githubusercontent.com/101445377/214492438-8dc39698-8e08-4f69-b00c-b3182ad1ea09.png">
 
-#### 직접 입력 받는 사용자 맞춤 정보
+### 직접 입력 받는 사용자 맞춤 정보
 <img width="634" alt="사용자 맞춤 정보" src="https://user-images.githubusercontent.com/101445377/214492433-335cdc56-ae79-4da0-9d95-e3a987acf86b.png">
 
-#### 터치 한번으로 간단하게 옷장 페이지로 이동
+### 터치 한번으로 간단하게 옷장 페이지로 이동
 <img width="682" alt="옷장 페이지 이동" src="https://user-images.githubusercontent.com/101445377/214492430-f2a72021-6651-4708-8f4f-26774cf60b21.png">
 
-#### 옷장 페이지에서 확인할 수 있는 날씨 요약정보 & 입력 받은 사용자 정보와 기상 정보를 토대로 옷 추천
+### 옷장 페이지에서 확인할 수 있는 날씨 요약정보 & 입력 받은 사용자 정보와 기상 정보를 토대로 옷 추천
 <img width="693" alt="날씨 요약" src="https://user-images.githubusercontent.com/101445377/214492423-174f514f-4903-474a-93d0-95a42805f7fa.png">
 
-#### 추천 받은 옷이 마음에 들지 않을 때 다른 옷 추천받기
+### 추천 받은 옷이 마음에 들지 않을 때 다른 옷 추천받기
 <img width="682" alt="다른 옷 추천" src="https://user-images.githubusercontent.com/101445377/214492407-b5596c92-427c-4e3c-9668-c28e1ca10d56.png">
 
 ## Code Description
