@@ -338,9 +338,92 @@ API : OpenWeatherMap API
     }
 ---
 #### translateWeatherLangToKorean(...)
+
+    // [번역함수] 영어 -> 한글
+    private fun translateWeatherLangToKorean(main : String) : String {
+        return when(main) {
+            "Clear" -> "맑음"
+            "Clouds" -> "구름 낌"
+            "Thunderstorm" -> "천둥번개"
+            "Rain" -> "비"
+            "Snow" -> "눈"
+            "Mist" -> "엷은 안개"
+            "Haze" -> "실안개"
+            "Fog" -> "안개"
+            "Sand" -> "황사"
+            "Dust" -> "먼지 심함"
+            "Squall" -> "돌풍"
+            "Tornado" -> "토네이도"
+            "Drizzle" -> "보슬비"
+            else -> main
+        }
+    }
+
 #### getCurrentTime()
+
+     // Calendar를 호출해서 현재 날짜, 시간을 불러온다.
+    private fun getCurrentTime() {
+        val date = Calendar.getInstance().time
+        basedate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(date) // 2022-05-29
+        var hour = SimpleDateFormat("HH", Locale.getDefault()).format(date.time) // 15:
+        hour = (hour.toInt() + 1).toString() + ":"
+        val min = "00:"
+        val sec = "00"
+        basetime = hour + min + sec // hour + min + sec = 15:12:00
+    }
+
 #### calcUnixDateToRealDate()
+
+    // [변환 함수] 유닉스 시간 -> 실제 시간
+    private fun calcUnixDateToRealDate(dt : Int) {
+        val date = Date(dt * 1000L)
+        unixToRealDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(date)
+        val hour = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(date.time)
+        unixToRealTime = hour
+    }
+
 #### isOptimalHumidity()
+
+    // 습도(정수형)에 따라서 건조, 쾌적, 습함을 구별해서 그 값을 리턴
+    private fun isOptimalHumidity(temp: Double, humidity: Int) : String {
+        var tempToInt = Math.round(temp).toInt()
+        var resultMsg : String = ""
+
+        when(tempToInt) {
+            in -99..16 -> {
+                if(humidity < 80) resultMsg = "건조"
+                else if(humidity == 80) resultMsg = "쾌적"
+                else resultMsg = "습함"
+            }
+            17 -> {
+                if(humidity < 70) resultMsg = "건조"
+                else if(humidity == 70) resultMsg = "쾌적"
+                else resultMsg = "습함"
+            }
+            in 18..20 -> {
+                if(humidity < 60) resultMsg = "건조"
+                else if(humidity == 60) resultMsg = "쾌적"
+                else resultMsg = "습함"
+            }
+            in 21..23-> {
+                if(humidity < 50) resultMsg = "건조"
+                else if(humidity == 50) resultMsg = "쾌적"
+                else resultMsg = "습함"
+            }
+            24 -> {
+                if(humidity < 40) resultMsg = "건조"
+                else if(humidity == 40) resultMsg = "쾌적"
+                else resultMsg = "습함"
+            }
+            in 25..99 -> {
+                if(humidity < 30) resultMsg = "건조"
+                else if(humidity == 30) resultMsg = "쾌적"
+                else resultMsg = "습함"
+            }
+        }
+        return resultMsg
+    }
+
 #### GPS 관한 설정 
 
     val activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
